@@ -103,17 +103,19 @@ footer .row {
 }
 
 .welcome {
-	color: #fff;
-	display: block;
-	margin: 0 auto;
-	position: absolute;
-	top: 33%;
-	width: 100%;
-	-webkit-transform: translateY(-33%);
-	-moz-transform: translateY(-33%);
-	-ms-transform: translateY(-33%);
-	-o-transform: translateY(-33%);
-	transform: translateY(-33%);
+	    color: #fff;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    -webkit-transform: translateY(-33%);
+    -moz-transform: translateY(-33%);
+    -ms-transform: translateY(-33%);
+    -o-transform: translateY(-33%);
+    transform: translateY(-33%);
+    background-color: rgba(3, 124, 193, 0.48);
+    padding: 20px;
 }
 
 .welcome h1 {
