@@ -16,7 +16,9 @@ h4,
 h5,
 h6 {
     color: #222;
-    font-family: "Open Sans", Arial, sans-serif;
+    /* font-family: "Open Sans", Arial, sans-serif; */
+    font-family: 'Century Gothic' !important;
+
     font-weight: bold;
 }
 
@@ -44,7 +46,7 @@ p {
 }
 
 hr {
-    border-top: 3px solid #eee;
+    border-top:3px solid #9acc34;
     margin: 30px 0;
 }
 
@@ -604,4 +606,57 @@ footer li {
     margin-right: auto;
     margin-top: 20px;
     border: 1px dashed white;
+}
+
+#hero {
+    margin-top: 94px;
+    background-color: #23477a;
+}
+.sideguy {
+    width: 100%;
+    border-radius: 139px;
+}
+.whiteheader{
+    color: white;
+    font-family: 'Century Gothic';
+}
+
+.heroangle{
+    background-color: #23477a;
+    width: 100%;
+    height: 100px;
+}
+
+.videoCover {
+    width: 100%;
+    /* margin: 20px; */
+    box-shadow: 1px 1px 7px 3px #0000004f;
+}
+
+.videoCoverHolder{
+    display: flex;
+    /* margin: 20px; */
+    align-items: center;
+    height: 350px;
+}
+
+.about{
+    background-image: url(../images/back1.png);
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    font-size: medium;
+    font-weight: 500;
+}
+.teacherpic{
+    width: 100%;
+}
+.locimage{
+    height: 235px;
+    width: 360px;
+}
+
+#reviews{
+    background-color: #f64243;
+    color: white;
 }
