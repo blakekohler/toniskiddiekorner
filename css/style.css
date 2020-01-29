@@ -675,3 +675,7 @@ footer li {
 .subTitle {
     width: 100%;
 }
+
+.hidden {
+    display: none;
+}

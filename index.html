@@ -869,8 +869,14 @@
                     <h2><img style="margin-right: 10px;" src="images/puzzles.png" /> Contact Us</h2>
                     <h5>CALL US OR DROP US A LINE</h5>
 
+
+
                     <!-- Form Start -->
-                    <form role="form" name="contactform" method="POST" data-netlify="true">
+                    <form role="form" name="contactform" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                        <p class="hidden">
+                            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
+                        <input type="hidden" name="form-name" value="contact" />
                         <div class="form-group col-sm-4" id="name-group">
                             <input type="text" class="form-control" id="inputName" name="name" placeholder="Name">
                         </div>
