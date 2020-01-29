@@ -667,5 +667,11 @@ footer li {
 .promoVid {
     width: 100%;
     box-shadow: 2px 0px 14px 0px black;
-    margin: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.whiteLogo,
+.subTitle {
+    width: 100%;
 }
