@@ -655,8 +655,10 @@ footer li {
 }
 
 .locimage {
-    height: 235px;
-    width: 360px;
+    
+        height: 100%;
+        width: 100%;
+   
 }
 
 #reviews {
