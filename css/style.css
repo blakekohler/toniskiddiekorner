@@ -609,7 +609,7 @@ footer li {
 
 #hero {
     margin-top: 94px;
-    background-color: #23477a;
+    background-color: #00c7c0;
 }
 
 .sideguy {
@@ -680,4 +680,11 @@ footer li {
 
 .hidden {
     display: none;
+}
+
+.pricing-header{
+    color: white;
+    font-size: x-large;
+    width: 100%;
+    padding: 10px;
 }
