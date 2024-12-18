@@ -160,6 +160,9 @@ footer .row {
 .background3 {
     background-color: #01c7be;
 }
+.background4{
+    background-color: #5d5d5d;
+}
 
 .background,
 .background h2,
@@ -687,4 +690,9 @@ footer li {
     font-size: x-large;
     width: 100%;
     padding: 10px;
+}
+
+.highlighted-color{
+    color: #01c7be;
+    font-weight: 600;
 }
