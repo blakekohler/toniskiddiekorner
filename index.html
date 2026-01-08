@@ -889,13 +889,14 @@
       max-width: 1400px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1.1fr;
+      grid-template-columns: 1fr 0.8fr;
       gap: 6rem;
       align-items: center;
     }
 
     .about-image {
       position: relative;
+      max-width: 50%;
     }
 
     .about-img-main {
@@ -1056,18 +1057,11 @@
     }
 
     .teacher-image::after {
-      content: '👩‍🏫';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 4rem;
-      opacity: 0.6;
-      transition: transform 0.4s ease;
+      display: none;
     }
 
     .teacher-card:hover .teacher-image::after {
-      transform: translate(-50%, -50%) scale(1.2);
+      display: none;
     }
 
     .teacher-card:nth-child(1) .teacher-image { background: linear-gradient(135deg, var(--teal-light) 0%, var(--teal) 100%); }
