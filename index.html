@@ -63,10 +63,6 @@
       cursor: none;
     }
 
-    .hidden {
-      display: none !important;
-    }
-
     /* Scroll Progress Bar */
     .scroll-progress {
       position: fixed;
@@ -603,7 +599,9 @@
       background: var(--navy);
       border-radius: 30px;
     }
-
+.hidden {
+      display: none !important;
+    }
     .hero-video-container iframe {
       position: absolute;
       top: 0;
@@ -889,23 +887,30 @@
       max-width: 1400px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 0.8fr;
+      grid-template-columns: 1fr 1.1fr;
       gap: 6rem;
       align-items: center;
     }
 
     .about-image {
       position: relative;
-      max-width: 50%;
     }
 
     .about-img-main {
       width: 100%;
       height: 550px;
-      object-fit: cover;
       border-radius: 30px;
       background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
       box-shadow: 0 30px 60px rgba(58, 175, 169, 0.25);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-img-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .about-img-main::after {
@@ -2371,6 +2376,14 @@
         <p>Schedule a tour, ask questions, or enroll your child today. We can't wait to meet your family and welcome your little one to our community!</p>
         <div class="contact-methods">
           <div class="contact-method tilt-card">
+            <div class="contact-method-icon">✉️</div>
+            <div>
+              <h4>Email Us</h4>
+              <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fa97838a889f8999929595968a969b999fba9d979b9396d4999597">[email&#160;protected]</a></p>
+            </div>
+            <div class="card-glare"></div>
+          </div>
+          <div class="contact-method tilt-card">
             <div class="contact-method-icon">📍</div>
             <div>
               <h4>Service Area</h4>
@@ -2390,25 +2403,21 @@
       </div>
       <div class="contact-form reveal-right">
         <h3>✨ Send Us a Message</h3>
-        <form id="newContactForm" name="newContactForm" method="POST" netlify>
-          <p class="hidden">
-            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-          </p>
-          <input type="hidden" name="form-name" value="newContactForm" />
+        <form id="contactForm">
           <div class="form-row">
             <div class="form-group">
               <label>Parent Name</label>
-              <input type="text" name="name" placeholder="Your name">
+              <input type="text" placeholder="Your name">
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="email" name="email" placeholder="your@email.com">
+              <input type="email" placeholder="your@email.com">
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>Child's Age</label>
-              <select name="child_age">
+              <select>
                 <option>Select age...</option>
                 <option>3 years old</option>
                 <option>4 years old</option>
@@ -2417,7 +2426,7 @@
             </div>
             <div class="form-group">
               <label>Preferred Location</label>
-              <select name="preferred_location">
+              <select>
                 <option>Select location...</option>
                 <option>Eagles Gate, Eagle Mountain</option>
                 <option>Silverlake, Eagle Mountain</option>
@@ -2429,7 +2438,7 @@
           </div>
           <div class="form-group">
             <label>Message</label>
-            <textarea name="message" placeholder="Tell us about your child or ask any questions..."></textarea>
+            <textarea placeholder="Tell us about your child or ask any questions..."></textarea>
           </div>
           <button type="submit" class="btn btn-primary magnetic-btn">Send Message <span class="btn-arrow">→</span></button>
         </form>
