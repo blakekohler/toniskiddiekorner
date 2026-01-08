@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enrollment & Policies | The Preschool Place</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal: #60b15f;
+      --teal-dark: #4a9149;
+      --teal-light: #e8f5e9;
+      --teal-glow: rgba(96, 177, 95, 0.4);
+      --coral: #214578;
+      --coral-dark: #1a3760;
+      --coral-light: #e8eef6;
+      --yellow: #FFD166;
+      --yellow-light: #FFF4D6;
+      --purple: #6BA3D6;
+      --purple-light: #EAF2FA;
+      --green: #60b15f;
+      --green-light: #e8f5e9;
+      --navy: #214578;
+      --white: #FFFFFF;
+      --cream: #FAFBFC;
+      --text-dark: #1a3760;
+      --text-medium: #4a6382;
+      --text-light: #6b849e;
+      /* New accent colors */
+      --lime: #60b15f;
+      --lime-light: #e8f5e9;
+      --deep-blue: #214578;
+      --deep-blue-light: #dce4f0;
+      --red: #E85A5A;
+      --red-light: #fee2e2;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Baloo 2', cursive;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal), var(--coral), var(--yellow));
+      z-index: 10001;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 30px rgba(23, 37, 42, 0.1);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.35rem;
+      font-weight: 800;
+    }
+
+    .logo .the { color: var(--navy); }
+    .logo .preschool { color: var(--teal); }
+    .logo .place { color: var(--navy); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--teal); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: white !important;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px var(--teal-glow);
+    }
+
+    /* Page Hero */
+    .page-hero {
+      padding: 10rem 2rem 5rem;
+      background: linear-gradient(135deg, var(--purple-light) 0%, var(--cream) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: -20%;
+      width: 600px;
+      height: 600px;
+      background: var(--teal-light);
+      border-radius: 50%;
+      opacity: 0.4;
+      filter: blur(80px);
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .page-hero .breadcrumb {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .page-hero .breadcrumb a { color: var(--purple); text-decoration: none; }
+    .page-hero .breadcrumb span { color: var(--text-light); }
+
+    .page-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .page-hero p {
+      font-size: 1.25rem;
+      color: var(--text-medium);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .page-hero-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    /* Section */
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--teal-light), white);
+      color: var(--teal-dark);
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      color: var(--text-medium);
+      font-size: 1.1rem;
+    }
+
+    /* Requirements Section */
+    .requirements {
+      background: var(--white);
+    }
+
+    .requirements-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .requirement-card {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      background: var(--cream);
+      border-radius: 24px;
+      transition: all 0.3s ease;
+      border: 3px solid transparent;
+    }
+
+    .requirement-card:hover {
+      border-color: var(--teal);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    .requirement-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin: 0 auto 1.5rem;
+    }
+
+    .requirement-card:nth-child(1) .requirement-icon { background: linear-gradient(135deg, var(--teal-light), var(--teal)); }
+    .requirement-card:nth-child(2) .requirement-icon { background: linear-gradient(135deg, var(--coral-light), var(--coral)); }
+    .requirement-card:nth-child(3) .requirement-icon { background: linear-gradient(135deg, var(--yellow-light), var(--yellow)); }
+
+    .requirement-card h3 {
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .requirement-card p {
+      color: var(--text-medium);
+      font-size: 0.95rem;
+    }
+
+    /* Registration Fee Section */
+    .registration {
+      background: linear-gradient(135deg, var(--teal-light), var(--cream));
+    }
+
+    .registration-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .registration-info h2 {
+      font-size: 2.5rem;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+    }
+
+    .registration-info > p {
+      color: var(--text-medium);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      line-height: 1.9;
+    }
+
+    .registration-includes {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .include-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      background: white;
+      border-radius: 12px;
+    }
+
+    .include-item-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--teal-light), var(--teal));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .include-item span {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .registration-card {
+      background: var(--navy);
+      border-radius: 24px;
+      padding: 3rem;
+      text-align: center;
+      color: white;
+    }
+
+    .registration-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .registration-price {
+      font-family: 'Baloo 2', cursive;
+      font-size: 5rem;
+      font-weight: 800;
+      color: var(--yellow);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .registration-card p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 2rem;
+    }
+
+    .registration-card .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* Tuition Section */
+    .tuition {
+      background: var(--white);
+    }
+
+    .tuition-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .tuition-location {
+      background: var(--cream);
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .tuition-header {
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: white;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .tuition-header h3 {
+      font-size: 1.5rem;
+    }
+
+    .tuition-body {
+      padding: 2rem;
+    }
+
+    .tuition-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .tuition-item:last-child { border: none; }
+
+    .tuition-item-info h4 {
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .tuition-item-info p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .tuition-item-price {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--teal);
+    }
+
+    .tuition-location:nth-child(2) .tuition-header {
+      background: linear-gradient(135deg, var(--coral), var(--coral-dark));
+    }
+
+    /* Policies Grid */
+    .policies {
+      background: var(--cream);
+    }
+
+    .policies-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .policy-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      border: 3px solid transparent;
+    }
+
+    .policy-card:hover {
+      border-color: var(--teal);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    .policy-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .policy-card:nth-child(1) .policy-icon { background: linear-gradient(135deg, var(--coral-light), var(--coral)); }
+    .policy-card:nth-child(2) .policy-icon { background: linear-gradient(135deg, var(--green-light), var(--green)); }
+    .policy-card:nth-child(3) .policy-icon { background: linear-gradient(135deg, var(--purple-light), var(--purple)); }
+
+    .policy-card h3 {
+      font-size: 1.25rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .policy-card p {
+      color: var(--text-medium);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .policy-highlight {
+      display: inline-block;
+      background: var(--yellow-light);
+      color: var(--navy);
+      padding: 0.25rem 0.75rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    /* Sibling Discount */
+    .sibling-discount {
+      background: linear-gradient(135deg, var(--yellow), #E5A800);
+      padding: 4rem 2rem;
+    }
+
+    .discount-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+    }
+
+    .discount-badge {
+      width: 150px;
+      height: 150px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      flex-shrink: 0;
+    }
+
+    .discount-badge .percent {
+      font-family: 'Baloo 2', cursive;
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--teal);
+      line-height: 1;
+    }
+
+    .discount-badge .label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-medium);
+      text-transform: uppercase;
+    }
+
+    .discount-info h2 {
+      font-size: 2rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .discount-info p {
+      color: var(--navy);
+      font-size: 1.1rem;
+      opacity: 0.8;
+    }
+
+    /* Class Details */
+    .class-details {
+      background: var(--navy);
+      padding: 4rem 2rem;
+    }
+
+    .details-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .detail-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(58, 175, 169, 0.2);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .detail-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .detail-card h4 {
+      color: white;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .detail-card p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--teal-light), var(--cream));
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .cta-content h2 {
+      font-size: 2.5rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .cta-content p {
+      color: var(--text-medium);
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-family: 'Baloo 2', cursive;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: white;
+      box-shadow: 0 8px 30px var(--teal-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px var(--teal-glow);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--teal);
+      border: 3px solid var(--teal);
+      margin-left: 1rem;
+    }
+
+    .btn-secondary:hover {
+      background: var(--teal);
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: white;
+      padding: 4rem 2rem 2rem;
+    }
+
+    .footer-container { max-width: 1200px; margin: 0 auto; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand h3 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand h3 .coral { color: var(--teal); }
+    .footer-brand h3 .accent { color: var(--yellow); }
+    .footer-brand p { color: rgba(255,255,255,0.7); line-height: 1.8; }
+
+    .footer-column h4 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.15rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-column ul { list-style: none; }
+    .footer-column li { margin-bottom: 0.75rem; }
+
+    .footer-column a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover { color: var(--teal); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p { color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+    .footer-tagline { color: var(--teal) !important; font-style: italic; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .requirements-grid, .policies-grid { grid-template-columns: 1fr; }
+      .registration-content { grid-template-columns: 1fr; }
+      .tuition-grid { grid-template-columns: 1fr; }
+      .details-grid { grid-template-columns: 1fr; }
+      .discount-content { flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: 1fr; text-align: center; }
+      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <span class="the">The</span> <span class="preschool">Preschool</span> <span class="place">Place</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="classroom.html">Our Classroom</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="daily-life.html">Daily Life</a></li>
+        
+        <li><a href="enrollment.html">Enrollment</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Enrollment</span>
+      </div>
+      <span class="page-hero-icon">📋</span>
+      <h1>Enrollment & Policies</h1>
+      <p>Everything you need to know about joining our preschool family—from registration to tuition and important policies.</p>
+    </div>
+  </section>
+
+  <!-- Requirements -->
+  <section class="requirements">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">✅ Requirements</span>
+        <h2>Before You Enroll</h2>
+        <p>A few things to know before registering your child for our programs.</p>
+      </div>
+
+      <div class="requirements-grid">
+        <div class="requirement-card reveal">
+          <div class="requirement-icon">🎂</div>
+          <h3>Age Requirements</h3>
+          <p>Children must be 3 (for Little Learners) or 4 (for Kinder-Prep) by September 1st of the school year.</p>
+        </div>
+        <div class="requirement-card reveal">
+          <div class="requirement-icon">🚽</div>
+          <h3>Toilet Trained</h3>
+          <p>Children must be fully toilet trained by the beginning of the school year to participate in our programs.</p>
+        </div>
+        <div class="requirement-card reveal">
+          <div class="requirement-icon">📝</div>
+          <h3>Registration</h3>
+          <p>Registration fees are non-refundable and hold your child's spot in the class of your choice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration Fee -->
+  <section class="registration">
+    <div class="container">
+      <div class="registration-content">
+        <div class="registration-info reveal">
+          <h2>Registration Fee</h2>
+          <p>The registration fee is a one-time payment that secures your child's spot and covers essential materials for the school year.</p>
+          
+          <div class="registration-includes">
+            <div class="include-item">
+              <div class="include-item-icon">📚</div>
+              <span>All class materials and supplies</span>
+            </div>
+            <div class="include-item">
+              <div class="include-item-icon">🚌</div>
+              <span>Field trip costs included</span>
+            </div>
+            <div class="include-item">
+              <div class="include-item-icon">👕</div>
+              <span>Class t-shirt for your child</span>
+            </div>
+            <div class="include-item">
+              <div class="include-item-icon">💳</div>
+              <span>All transaction fees for payments</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="registration-card reveal">
+          <h3>One-Time Registration</h3>
+          <div class="registration-price">$170</div>
+          <p>Non-refundable • Holds your child's spot</p>
+          <a href="index.html#contact" class="btn btn-primary">Register Now →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tuition -->
+  <section class="tuition">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">💰 Monthly Tuition</span>
+        <h2>Tuition by Location</h2>
+        <p>Monthly tuition rates vary slightly by location. All Eagle Mountain locations have two teachers per class.</p>
+      </div>
+
+      <div class="tuition-grid">
+        <div class="tuition-location reveal">
+          <div class="tuition-header">
+            <h3>🏔️ Eagle Mountain</h3>
+          </div>
+          <div class="tuition-body">
+            <div class="tuition-item">
+              <div class="tuition-item-info">
+                <h4>Little Learners</h4>
+                <p>3-year-olds • Tue/Thu</p>
+              </div>
+              <div class="tuition-item-price">$124</div>
+            </div>
+            <div class="tuition-item">
+              <div class="tuition-item-info">
+                <h4>PM Preschool</h4>
+                <p>3-5 year-olds • Tue/Thu</p>
+              </div>
+              <div class="tuition-item-price">$134</div>
+            </div>
+            <div class="tuition-item">
+              <div class="tuition-item-info">
+                <h4>Kinder-Prep</h4>
+                <p>4-5 year-olds • Mon/Wed/Fri</p>
+              </div>
+              <div class="tuition-item-price">$189</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tuition-location reveal">
+          <div class="tuition-header">
+            <h3>🌊 Saratoga Springs</h3>
+          </div>
+          <div class="tuition-body">
+            <div class="tuition-item">
+              <div class="tuition-item-info">
+                <h4>Little Learners</h4>
+                <p>3-year-olds • Tue/Thu</p>
+              </div>
+              <div class="tuition-item-price">$124</div>
+            </div>
+            <div class="tuition-item">
+              <div class="tuition-item-info">
+                <h4>PM Preschool</h4>
+                <p>3-5 year-olds • Tue/Thu</p>
+              </div>
+              <div class="tuition-item-price">$134</div>
+            </div>
+            <div class="tuition-item">
+              <div class="tuition-item-info">
+                <h4>Kinder-Prep</h4>
+                <p>4-5 year-olds • Mon/Wed/Fri</p>
+              </div>
+              <div class="tuition-item-price">$164</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sibling Discount -->
+  <section class="sibling-discount">
+    <div class="discount-content reveal">
+      <div class="discount-badge">
+        <span class="percent">25%</span>
+        <span class="label">OFF</span>
+      </div>
+      <div class="discount-info">
+        <h2>👨‍👩‍👧‍👦 Sibling Discount</h2>
+        <p>25% off tuition each month for the second sibling registering. Discount applied to the lower tuition if children are in different programs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Policies -->
+  <section class="policies">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">📄 Policies</span>
+        <h2>Important Information</h2>
+        <p>Key policies to keep your enrollment smooth and hassle-free.</p>
+      </div>
+
+      <div class="policies-grid">
+        <div class="policy-card reveal">
+          <div class="policy-icon">⏰</div>
+          <h3>Late Fees</h3>
+          <p>If tuition is not paid by the due date, a late fee will be added to your balance.</p>
+          <span class="policy-highlight">$5 after Week 1</span>
+        </div>
+        <div class="policy-card reveal">
+          <div class="policy-icon">💳</div>
+          <h3>Payment Methods</h3>
+          <p>Our preschool provides Brightwheel software for monthly tuition payments. Set up automatic payments or pay manually each month.</p>
+          <span class="policy-highlight">Cash & Check accepted</span>
+        </div>
+        <div class="policy-card reveal">
+          <div class="policy-icon">🔒</div>
+          <h3>Non-Refundable</h3>
+          <p>Registration fees are non-refundable and serve as your deposit to hold your child's spot in their class.</p>
+          <span class="policy-highlight">Secures enrollment</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Class Details -->
+  <section class="class-details">
+    <div class="details-grid">
+      <div class="detail-card reveal">
+        <div class="detail-icon">👩‍🏫</div>
+        <div>
+          <h4>Two Teachers Per Class</h4>
+          <p>All Eagle Mountain locations</p>
+        </div>
+      </div>
+      <div class="detail-card reveal">
+        <div class="detail-icon">👧</div>
+        <div>
+          <h4>14 Students Max</h4>
+          <p>Eagle Mountain class cap</p>
+        </div>
+      </div>
+      <div class="detail-card reveal">
+        <div class="detail-icon">🏠</div>
+        <div>
+          <h4>10 Students Max</h4>
+          <p>Saratoga Springs (1 teacher)</p>
+        </div>
+      </div>
+      <div class="detail-card reveal">
+        <div class="detail-icon">🎒</div>
+        <div>
+          <h4>Toilet Trained Required</h4>
+          <p>By start of school year</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content reveal">
+      <h2>Ready to Enroll?</h2>
+      <p>Contact us to register your child and secure their spot in our play-based learning community.</p>
+      <a href="index.html#contact" class="btn btn-primary">Start Registration →</a>
+      <a href="programs.html" class="btn btn-secondary">View Programs</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>The <span class="coral">Preschool</span> <span class="accent">Place</span></h3>
+          <p>Nurturing curiosity and building foundations for lifelong learning through play-based education since 2013.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="classroom.html">Our Classroom</a></li>
+            <li><a href="daily-life.html">Daily Life</a></li>
+            <li><a href="enrollment.html">Enrollment</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="programs.html">Little Learners</a></li>
+            <li><a href="programs.html">PM Preschool</a></li>
+            <li><a href="programs.html">Kinder-Prep</a></li>
+            <li><a href="enrollment.html">Tuition & Fees</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="index.html#contact">Contact Us</a></li>
+            <li><a href="index.html#locations">Locations</a></li>
+            <li><a href="enrollment.html">Enrollment</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 The Preschool Place • Eagle Mountain & Saratoga Springs, Utah</p>
+        <p class="footer-tagline">Where PLAY is a part of every day ™</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll Progress
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.getElementById('scrollProgress').style.width = scrollPercent + '%';
+    });
+
+    // Reveal on Scroll
+    const revealElements = document.querySelectorAll('.reveal');
+    function revealOnScroll() {
+      revealElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add('active');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+</body>
+</html>
