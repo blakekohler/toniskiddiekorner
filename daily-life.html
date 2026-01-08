@@ -795,8 +795,69 @@
       .timeline-icon { left: 30px; transform: translateX(-50%); }
     }
 
+    /* Mobile Menu Styles */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 1001;
+    }
+
+    .mobile-menu span {
+      width: 30px;
+      height: 3px;
+      background: var(--navy);
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .mobile-menu.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    .nav-links.nav-open {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      z-index: 999;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .nav-links.nav-open a {
+      font-size: 1.5rem;
+    }
+
+    .nav-links.nav-open .nav-cta {
+      margin-top: 1rem;
+    }
+
     @media (max-width: 768px) {
-      .nav-links { display: none; }
+      .nav-links:not(.nav-open) { display: none; }
+      .mobile-menu { display: flex; }
       .footer-grid { grid-template-columns: 1fr; text-align: center; }
       .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
     }
@@ -827,10 +888,15 @@
         <li><a href="classroom.html">Our Classroom</a></li>
         <li><a href="programs.html">Programs</a></li>
         <li><a href="daily-life.html">Daily Life</a></li>
-        
+
         <li><a href="enrollment.html">Enrollment</a></li>
         <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
       </ul>
+      <div class="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </nav>
 
@@ -1127,6 +1193,26 @@
     }
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('load', revealOnScroll);
+
+    // Mobile Menu Toggle
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenu && navLinks) {
+      mobileMenu.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        navLinks.classList.toggle('nav-open');
+        document.body.style.overflow = navLinks.classList.contains('nav-open') ? 'hidden' : '';
+      });
+
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          navLinks.classList.remove('nav-open');
+          document.body.style.overflow = '';
+        });
+      });
+    }
   </script>
 </body>
 </html>
