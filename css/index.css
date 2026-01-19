@@ -81,7 +81,7 @@
       border-radius: 50%;
       position: fixed;
       pointer-events: none;
-      z-index: 10000;
+      z-index: 10003;
       transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
       transform: translate(-50%, -50%);
     }
@@ -195,6 +195,16 @@
 
     .logo:hover {
       transform: scale(1.02);
+    }
+
+    .logo-img {
+      height: 120px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    nav.scrolled .logo-img {
+      height: 100px;
     }
 
     .logo .the {
@@ -846,6 +856,12 @@
       transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
 
+    .philosophy-icon img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
     .philosophy-card:hover .philosophy-icon {
       transform: scale(1.1) rotate(5deg);
     }
@@ -1001,6 +1017,12 @@
       flex-shrink: 0;
     }
 
+    .about-feature-icon img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
     .about-feature span {
       font-weight: 700;
       color: var(--navy);
@@ -1094,6 +1116,154 @@
       line-height: 1.6;
     }
 
+    .teacher-card {
+      cursor: pointer;
+    }
+
+    /* Teacher Bio Modal */
+    .teacher-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 10002;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .teacher-modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .teacher-modal-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(45, 74, 111, 0.85);
+      backdrop-filter: blur(10px);
+    }
+
+    .teacher-modal-content {
+      position: relative;
+      background: white;
+      border-radius: 30px;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      grid-template-rows: 1fr;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+      transform: scale(0.9) translateY(30px);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .teacher-modal.active .teacher-modal-content {
+      transform: scale(1) translateY(0);
+    }
+
+    .teacher-modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: none;
+      background: var(--cream);
+      color: var(--navy);
+      font-size: 1.75rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 10;
+      line-height: 1;
+    }
+
+    .teacher-modal-close:hover {
+      background: var(--teal);
+      color: white;
+      transform: rotate(90deg);
+    }
+
+    .teacher-modal-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .teacher-modal-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .teacher-modal-body {
+      padding: 3rem;
+      overflow-y: auto;
+      max-height: 90vh;
+    }
+
+    .teacher-modal-body h2 {
+      font-family: 'Baloo 2', cursive;
+      font-size: 2.25rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .teacher-modal-role {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--teal-light), var(--teal));
+      color: white;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .teacher-modal-body p {
+      color: var(--text-medium);
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+    @media (max-width: 768px) {
+      .teacher-modal-content {
+        grid-template-columns: 1fr;
+        max-height: 85vh;
+      }
+
+      .teacher-modal-image {
+        height: 250px;
+      }
+
+      .teacher-modal-body {
+        padding: 2rem;
+        max-height: 50vh;
+        overflow-y: auto;
+      }
+
+      .teacher-modal-body h2 {
+        font-size: 1.75rem;
+      }
+
+      .teacher-modal-close {
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 40px;
+        height: 40px;
+        background: white;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      }
+    }
+
     /* Programs Section */
     .programs {
       padding: 7rem 2rem;
@@ -1133,9 +1303,16 @@
     }
 
     .pricing-grid {
-      display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2.5rem;
+    }
+
+    .pricing-grid.program-content {
+      display: none;
+    }
+
+    .pricing-grid.program-content.active {
+      display: grid;
     }
 
     .pricing-card {
@@ -1350,6 +1527,12 @@
       overflow: hidden;
     }
 
+    .expect-image img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+    }
+
     .expect-card:nth-child(1) .expect-image { background: linear-gradient(135deg, var(--teal-light) 0%, var(--teal) 60%); }
     .expect-card:nth-child(2) .expect-image { background: linear-gradient(135deg, var(--coral-light) 0%, var(--coral) 60%); }
     .expect-card:nth-child(3) .expect-image { background: linear-gradient(135deg, var(--yellow-light) 0%, var(--yellow) 60%); }
@@ -1427,9 +1610,9 @@
     }
 
     .location-icon {
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      width: 100px;
+      height: 100px;
+      background: white;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -1438,6 +1621,13 @@
       margin: 0 auto 1.25rem;
       box-shadow: 0 10px 30px var(--teal-glow);
       transition: transform 0.4s ease;
+    }
+
+    .location-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
     }
 
     .location-card:hover .location-icon {
@@ -1612,6 +1802,12 @@
       box-shadow: 0 8px 25px var(--teal-glow);
     }
 
+    .contact-method-icon img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    }
+
     .contact-method h4 {
       font-size: 0.85rem;
       color: var(--teal-dark);
@@ -1745,6 +1941,13 @@
       font-size: 2rem;
       font-weight: 800;
       color: white;
+    }
+
+    .footer-logo-img {
+      height: 160px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
     }
 
     .footer-logo .coral {

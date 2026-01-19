@@ -3,7 +3,9 @@
     "allow": [
       "Bash(~/bin/slack-notify:*)",
       "Bash(python3:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "mcp__trello__add_card_to_list",
+      "Bash(curl:*)"
     ]
   }
 }
