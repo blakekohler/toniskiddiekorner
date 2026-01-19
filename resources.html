@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Classroom | The Preschool Place</title>
+  <title>Resources | The Preschool Place</title>
   <link rel="shortcut icon" href="images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,6 @@
       --text-dark: #2D4A6F;
       --text-medium: #4a6382;
       --text-light: #6b849e;
-      /* Accent colors */
       --lime: #81D9D8;
       --lime-light: #E0F7F7;
       --deep-blue: #2D4A6F;
@@ -40,7 +39,7 @@
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    
+
     body {
       font-family: 'Nunito', sans-serif;
       background: var(--white);
@@ -55,7 +54,6 @@
       line-height: 1.2;
     }
 
-    /* Scroll Progress */
     .scroll-progress {
       position: fixed;
       top: 0;
@@ -115,9 +113,7 @@
       transition: color 0.3s ease;
     }
 
-    .nav-links a:hover {
-      color: var(--teal);
-    }
+    .nav-links a:hover { color: var(--teal); }
 
     .nav-cta {
       background: linear-gradient(135deg, var(--teal), var(--teal-dark));
@@ -125,11 +121,6 @@
       padding: 0.75rem 1.5rem;
       border-radius: 50px;
       box-shadow: 0 4px 15px var(--teal-glow);
-    }
-
-    .nav-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px var(--teal-glow);
     }
 
     /* Page Hero */
@@ -150,7 +141,7 @@
       height: 600px;
       background: var(--yellow-light);
       border-radius: 50%;
-      opacity: 0.5;
+      opacity: 0.4;
       filter: blur(80px);
     }
 
@@ -169,14 +160,8 @@
       font-size: 0.95rem;
     }
 
-    .page-hero .breadcrumb a {
-      color: var(--teal);
-      text-decoration: none;
-    }
-
-    .page-hero .breadcrumb span {
-      color: var(--text-light);
-    }
+    .page-hero .breadcrumb a { color: var(--teal); text-decoration: none; }
+    .page-hero .breadcrumb span { color: var(--text-light); }
 
     .page-hero h1 {
       font-size: clamp(2.5rem, 5vw, 4rem);
@@ -198,102 +183,8 @@
     }
 
     /* Section */
-    section {
-      padding: 5rem 2rem;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Intro Section */
-    .intro {
-      background: var(--white);
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .intro-content h2 {
-      font-size: 2.5rem;
-      color: var(--navy);
-      margin-bottom: 1.5rem;
-    }
-
-    .intro-content p {
-      color: var(--text-medium);
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-      line-height: 1.9;
-    }
-
-    .intro-image {
-      position: relative;
-    }
-
-    .intro-image-main {
-      width: 100%;
-      height: 400px;
-      border-radius: 24px;
-      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 8rem;
-      box-shadow: 0 30px 60px rgba(58, 175, 169, 0.2);
-      overflow: hidden;
-    }
-
-    .intro-image-main img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .brightwheel-badge {
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      background: white;
-      padding: 1.25rem 1.5rem;
-      border-radius: 16px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .brightwheel-badge-icon {
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(135deg, var(--coral-light), var(--coral));
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-    }
-
-    .brightwheel-badge h4 {
-      font-size: 1rem;
-      color: var(--navy);
-    }
-
-    .brightwheel-badge p {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      margin: 0;
-    }
-
-    /* Learning Centers */
-    .learning-centers {
-      background: var(--cream);
-    }
+    section { padding: 5rem 2rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
 
     .section-header {
       text-align: center;
@@ -327,106 +218,67 @@
       font-size: 1.1rem;
     }
 
-    .centers-grid {
+    /* Resources Grid */
+    .resources-section {
+      background: var(--white);
+    }
+
+    .resources-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
     }
 
-    .center-card {
-      background: white;
+    .resource-card {
+      background: var(--cream);
       border-radius: 24px;
       overflow: hidden;
       transition: all 0.4s ease;
       border: 3px solid transparent;
-      display: grid;
-      grid-template-columns: 200px 1fr;
+      text-decoration: none;
+      display: block;
     }
 
-    .center-card:hover {
+    .resource-card:hover {
       border-color: var(--teal);
-      box-shadow: 0 20px 50px rgba(23, 37, 42, 0.1);
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.1);
     }
 
-    .center-card-image {
-      height: 100%;
-      min-height: 200px;
+    .resource-card-image {
+      height: 200px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 4rem;
-      position: relative;
+      font-size: 5rem;
     }
 
-    .center-card:nth-child(1) .center-card-image { background: linear-gradient(135deg, var(--coral-light), var(--coral)); }
-    .center-card:nth-child(2) .center-card-image { background: linear-gradient(135deg, var(--teal-light), var(--teal)); }
-    .center-card:nth-child(3) .center-card-image { background: linear-gradient(135deg, var(--yellow-light), var(--yellow)); }
-    .center-card:nth-child(4) .center-card-image { background: linear-gradient(135deg, var(--purple-light), var(--purple)); }
-    .center-card:nth-child(5) .center-card-image { background: linear-gradient(135deg, var(--green-light), var(--green)); }
-    .center-card:nth-child(6) .center-card-image { background: linear-gradient(135deg, var(--coral-light), var(--coral)); }
-    .center-card:nth-child(7) .center-card-image { background: linear-gradient(135deg, var(--teal-light), var(--teal)); }
-    .center-card:nth-child(8) .center-card-image { background: linear-gradient(135deg, var(--yellow-light), var(--yellow)); }
-    .center-card:nth-child(9) .center-card-image { background: linear-gradient(135deg, var(--purple-light), var(--purple)); }
-    .center-card:nth-child(10) .center-card-image { background: linear-gradient(135deg, var(--green-light), var(--green)); }
+    .resource-card:nth-child(1) .resource-card-image { background: linear-gradient(135deg, var(--teal-light), var(--teal)); }
+    .resource-card:nth-child(2) .resource-card-image { background: linear-gradient(135deg, var(--coral-light), var(--coral)); }
 
-    .center-card-content {
+    .resource-card-content {
       padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
 
-    .center-card-content h3 {
-      font-size: 1.35rem;
+    .resource-card-content h3 {
+      font-size: 1.5rem;
       color: var(--navy);
-      margin-bottom: 0.75rem;
+      margin-bottom: 1rem;
     }
 
-    .center-card-content p {
+    .resource-card-content p {
       color: var(--text-medium);
-      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
       line-height: 1.7;
     }
 
-    /* Philosophy Banner */
-    .philosophy-banner {
-      background: var(--navy);
-      padding: 5rem 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .philosophy-banner::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233AAFA9' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-
-    .philosophy-banner-content {
-      max-width: 900px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .philosophy-banner h2 {
-      font-size: 2.5rem;
-      color: white;
-      margin-bottom: 1.5rem;
-    }
-
-    .philosophy-banner p {
-      color: rgba(255,255,255,0.8);
-      font-size: 1.2rem;
-      line-height: 1.9;
-    }
-
-    .philosophy-banner .highlight {
-      color: var(--yellow);
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--teal);
       font-weight: 700;
+      font-size: 1rem;
     }
 
     /* CTA Section */
@@ -492,10 +344,7 @@
       padding: 4rem 2rem 2rem;
     }
 
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .footer-container { max-width: 1200px; margin: 0 auto; }
 
     .footer-grid {
       display: grid;
@@ -510,18 +359,9 @@
       margin-bottom: 1rem;
     }
 
-    .footer-brand h3 .coral {
-      color: var(--teal);
-    }
-
-    .footer-brand h3 .accent {
-      color: var(--yellow);
-    }
-
-    .footer-brand p {
-      color: rgba(255,255,255,0.7);
-      line-height: 1.8;
-    }
+    .footer-brand h3 .coral { color: var(--teal); }
+    .footer-brand h3 .accent { color: var(--yellow); }
+    .footer-brand p { color: rgba(255,255,255,0.7); line-height: 1.8; }
 
     .footer-column h4 {
       font-family: 'Baloo 2', cursive;
@@ -529,13 +369,8 @@
       margin-bottom: 1.25rem;
     }
 
-    .footer-column ul {
-      list-style: none;
-    }
-
-    .footer-column li {
-      margin-bottom: 0.75rem;
-    }
+    .footer-column ul { list-style: none; }
+    .footer-column li { margin-bottom: 0.75rem; }
 
     .footer-column a {
       color: rgba(255,255,255,0.7);
@@ -543,9 +378,7 @@
       transition: color 0.3s ease;
     }
 
-    .footer-column a:hover {
-      color: var(--teal);
-    }
+    .footer-column a:hover { color: var(--teal); }
 
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.1);
@@ -555,23 +388,8 @@
       align-items: center;
     }
 
-    .footer-bottom p {
-      color: rgba(255,255,255,0.5);
-      font-size: 0.9rem;
-    }
-
-    .footer-tagline {
-      color: var(--teal) !important;
-      font-style: italic;
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .intro-grid { grid-template-columns: 1fr; }
-      .centers-grid { grid-template-columns: 1fr; }
-      .center-card { grid-template-columns: 150px 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-    }
+    .footer-bottom p { color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+    .footer-tagline { color: var(--teal) !important; font-style: italic; }
 
     /* Mobile Menu Styles */
     .mobile-menu {
@@ -641,47 +459,45 @@
       margin-top: 1rem;
     }
 
+    /* Responsive */
     @media (max-width: 1024px) {
       .nav-links:not(.nav-open) { display: none; }
       .mobile-menu { display: flex; }
+      .resources-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 768px) {
       section { padding: 3rem 1.5rem; }
-
       .page-hero { padding: 7rem 1.5rem 3rem; }
       .page-hero h1 { font-size: 2rem; }
       .page-hero p { font-size: 1rem; }
-
+      .page-hero-icon { font-size: 3rem; }
+      .section-header { margin-bottom: 2.5rem; }
       .section-header h2 { font-size: 1.75rem; }
-      .section-header p { font-size: 1rem; }
-      .section-header { margin-bottom: 2rem; }
-
-      .center-card { grid-template-columns: 1fr; }
-      .center-card-image { min-height: 150px; }
-      .center-card-content { padding: 1.5rem; }
-      .center-card-content h3 { font-size: 1.25rem; }
-
-      .philosophy-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-      .philosophy-card { padding: 1.5rem; }
-
+      .resource-card-image { height: 160px; font-size: 4rem; }
+      .resource-card-content { padding: 1.5rem; }
+      .resource-card-content h3 { font-size: 1.25rem; }
       .cta-content h2 { font-size: 1.75rem; }
       .cta-content p { font-size: 1rem; }
-      .btn { padding: 0.875rem 1.5rem; font-size: 0.95rem; }
-
+      .btn { padding: 0.875rem 1.5rem; font-size: 1rem; }
+      .btn-secondary { margin-left: 0; margin-top: 1rem; }
       .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
-      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .footer-bottom { flex-direction: column; justify-content: center; text-align: center; gap: 0.5rem; }
     }
 
     @media (max-width: 480px) {
       .page-hero { padding: 6rem 1rem 2rem; }
-      .page-hero h1 { font-size: 1.65rem; }
-      .page-hero-icon { font-size: 3rem; }
-
-      .section-tag { font-size: 0.75rem; padding: 0.4rem 1rem; }
+      .page-hero h1 { font-size: 1.65rem; line-height: 1.3; }
+      .page-hero-icon { font-size: 2.5rem; }
+      section { padding: 2.5rem 1rem; }
+      .resource-card-image { height: 140px; font-size: 3.5rem; }
+      .resource-card-content { padding: 1.25rem; }
+      .resource-card-content h3 { font-size: 1.15rem; }
+      .resource-card-content p { font-size: 0.95rem; }
+      .cta-content h2 { font-size: 1.5rem; }
     }
 
-    /* Animations */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -708,7 +524,6 @@
         <li><a href="classroom.html">Our Classroom</a></li>
         <li><a href="programs.html">Programs</a></li>
         <li><a href="daily-life.html">Daily Life</a></li>
-
         <li><a href="enrollment.html">Enrollment</a></li>
         <li><a href="resources.html">Resources</a></li>
         <li><a href="index.html#contact" class="nav-cta">Contact Us</a></li>
@@ -727,144 +542,50 @@
       <div class="breadcrumb">
         <a href="index.html">Home</a>
         <span>/</span>
-        <span>Our Classroom</span>
+        <span>Resources</span>
       </div>
-      <span class="page-hero-icon">🎨</span>
-      <h1>Our Classroom</h1>
-      <p>Explore our specially designed learning environments where curiosity, creativity, and discovery come to life every day.</p>
+      <span class="page-hero-icon">📚</span>
+      <h1>Parent Resources</h1>
+      <p>Helpful tools and resources to support your child's learning journey at home and beyond.</p>
     </div>
   </section>
 
-  <!-- Intro Section -->
-  <section class="intro">
-    <div class="container">
-      <div class="intro-grid">
-        <div class="intro-content reveal">
-          <h2>A Special Learning Environment</h2>
-          <p>Our preschool offers a special learning environment for our children. Because we believe in play-based learning, we base our classroom structure off of the nationally accredited <strong>Adele and Dale Young Child Development Laboratory at Utah State University</strong>.</p>
-          <p>Our classrooms offer active exploration, promoting independence, creative thinking, problem-solving strategies, curiosity, self-help skills, and interpersonal skills.</p>
-          <p>We believe in teaching to the whole child and their many different learning abilities and interests. Within our classroom walls, your child will find safety and comfort in exploring each learning area.</p>
-        </div>
-        <div class="intro-image reveal">
-          <div class="intro-image-main"><img src="images/kids.jpeg" alt="Classroom with children"></div>
-          <div class="brightwheel-badge">
-            <div class="brightwheel-badge-icon">📱</div>
-            <div>
-              <h4>Brightwheel Updates</h4>
-              <p>Daily photos & videos</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Learning Centers -->
-  <section class="learning-centers">
+  <!-- Resources Section -->
+  <section class="resources-section">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag">🎯 Learning Centers</span>
-        <h2>10 Unique Discovery Zones</h2>
-        <p>Each area changes every couple of weeks according to our thematic learning units, so your child will always find something new and interesting!</p>
+        <span class="section-tag">🎓 Learning Tools</span>
+        <h2>Explore Our Resources</h2>
+        <p>Access additional learning opportunities and stay connected with our preschool community.</p>
       </div>
 
-      <div class="centers-grid">
-        <div class="center-card reveal">
-          <div class="center-card-image">🎨</div>
-          <div class="center-card-content">
-            <h3>Art & Art Easel Center</h3>
-            <p>We believe in process art! We focus on the process rather than the finished product. Children leave with increased confidence because they were encouraged to create according to their own interests using multiple art mediums.</p>
+      <div class="resources-grid">
+        <a href="https://www.mypreschoolplaceonline.com" target="_blank" class="resource-card reveal">
+          <div class="resource-card-image">💻</div>
+          <div class="resource-card-content">
+            <h3>Online Preschool</h3>
+            <p>Access our online preschool curriculum from anywhere. Perfect for summer learning, sick days, or families who want to supplement their child's education at home.</p>
+            <span class="resource-link">Visit Online Preschool →</span>
           </div>
-        </div>
+        </a>
 
-        <div class="center-card reveal">
-          <div class="center-card-image">✏️</div>
-          <div class="center-card-content">
-            <h3>Writing Center</h3>
-            <p>Our writing center encourages children to explore writing letters using different writing mediums. We switch out and add different materials to keep students engaged and curious.</p>
+        <a href="https://thepreschoolplaceblog.wordpress.com" target="_blank" class="resource-card reveal">
+          <div class="resource-card-image">📝</div>
+          <div class="resource-card-content">
+            <h3>Our Blog</h3>
+            <p>Read articles about early childhood education, parenting tips, activity ideas, and updates from The Preschool Place community.</p>
+            <span class="resource-link">Read Our Blog →</span>
           </div>
-        </div>
-
-        <div class="center-card reveal">
-          <div class="center-card-image">📚</div>
-          <div class="center-card-content">
-            <h3>Reading Center</h3>
-            <p>We love to take a deep dive into books and stories! Students develop literacy skills by listening to stories during large group time, reflecting in small groups, and reinvestigating stories during playtime.</p>
-          </div>
-        </div>
-
-        <div class="center-card reveal">
-          <div class="center-card-image">🎭</div>
-          <div class="center-card-content">
-            <h3>Dramatic Play</h3>
-            <p>Pretend play is a key component! Children use dramatic play to explore feelings, expand imagination, gain social skills, develop literacy skills, and learn to self-regulate. Themes change with each unit of study.</p>
-          </div>
-        </div>
-
-        <div class="center-card reveal">
-          <div class="center-card-image">🌊</div>
-          <div class="center-card-content">
-            <h3>Sensory Table</h3>
-            <p>Our sensory table helps children explore their senses and the world around them. It encourages small motor skills, language development, scientific thinking, and builds nerve connections in the brain.</p>
-          </div>
-        </div>
-
-        <div class="center-card reveal">
-          <div class="center-card-image">🤸</div>
-          <div class="center-card-content">
-            <h3>Large Motor Block & Play</h3>
-            <p>Children exercise and strengthen gross muscles with our Jungle Jumparoo, allowing them to jump, hang, swing, and climb. We also include balance beams, basketball hoops, and hula hoops.</p>
-          </div>
-        </div>
-
-        <div class="center-card reveal">
-          <div class="center-card-image">🧱</div>
-          <div class="center-card-content">
-            <h3>Small Motor Blocks & Manipulatives</h3>
-            <p>Building with blocks develops fine motor skills, turn-taking, social skills, hand-eye coordination, math skills, and engineering skills. These materials are switched out according to student interests.</p>
-          </div>
-        </div>
-
-        <div class="center-card reveal">
-          <div class="center-card-image">🎵</div>
-          <div class="center-card-content">
-            <h3>Music & Movement</h3>
-            <p>We incorporate music and movement into every day! We add musical instruments, scarves, costumes, and props to offer variety as we sing, dance, and move our bodies to the beat!</p>
-          </div>
-        </div>
-
-        <div class="center-card reveal">
-          <div class="center-card-image">👨‍🍳</div>
-          <div class="center-card-content">
-            <h3>Cooking Experiences</h3>
-            <p>We engage students in cooking within every thematic unit. Children help read recipes, gather ingredients, measure, mix, scoop, and of course—EAT! It's hands-on learning they can taste.</p>
-          </div>
-        </div>
-
-        <div class="center-card reveal">
-          <div class="center-card-image">🌳</div>
-          <div class="center-card-content">
-            <h3>Outside Play</h3>
-            <p>We go outside as much as possible—even in the snow! Children play in the sandbox, swing, ride bikes and scooters. We're always adding new toys and activities to keep curious minds engaged.</p>
-          </div>
-        </div>
+        </a>
       </div>
-    </div>
-  </section>
-
-  <!-- Philosophy Banner -->
-  <section class="philosophy-banner">
-    <div class="philosophy-banner-content reveal">
-      <h2>Learning Through Discovery</h2>
-      <p>Each learning area will change every couple of weeks according to our <span class="highlight">thematic learning units</span>, so your child will always find something new and interesting to keep their busy mind engaged while <span class="highlight">problem solving, creating, imagining</span>, and most importantly, <span class="highlight">LEARNING!</span></p>
     </div>
   </section>
 
   <!-- CTA Section -->
   <section class="cta-section">
     <div class="cta-content reveal">
-      <h2>Ready to See Our Classroom?</h2>
-      <p>Schedule a tour to experience our learning environment firsthand and see where your child will explore, create, and grow.</p>
+      <h2>Questions About Our Resources?</h2>
+      <p>We're here to help you make the most of these tools for your child's learning.</p>
       <a href="index.html#contact" class="btn btn-primary">Contact Us →</a>
       <a href="programs.html" class="btn btn-secondary">View Programs</a>
     </div>
@@ -906,8 +627,8 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2024 The Preschool Place • Eagle Mountain & Saratoga Springs, Utah</p>
-        <p class="footer-tagline">Where PLAY is a part of every day ™</p>
+        <p>&copy; 2024 The Preschool Place &bull; Eagle Mountain & Saratoga Springs, Utah</p>
+        <p class="footer-tagline">Where PLAY is a part of every day!</p>
       </div>
     </div>
   </footer>

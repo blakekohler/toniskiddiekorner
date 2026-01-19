@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(~/bin/slack-notify:*)",
+      "Bash(python3:*)",
+      "Bash(cat:*)"
+    ]
+  }
+}
