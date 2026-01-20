@@ -1035,6 +1035,35 @@
       background: var(--white);
     }
 
+    .location-heads-intro {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .location-heads-intro h3 {
+      font-size: 1.75rem;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .location-heads-intro p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .location-heads-intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .location-heads-intro em {
+      font-style: italic;
+      color: var(--teal);
+    }
+
     .teachers-grid {
       max-width: 1400px;
       margin: 0 auto;
