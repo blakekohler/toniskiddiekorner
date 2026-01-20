@@ -5,7 +5,10 @@
       "Bash(python3:*)",
       "Bash(cat:*)",
       "mcp__trello__add_card_to_list",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }
