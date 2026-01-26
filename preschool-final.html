@@ -2448,43 +2448,43 @@
         </div>
       </div>
       <div class="contact-form reveal-right">
-        <h3>✨ Send Us a Message</h3>
-        <form id="contactForm">
+        <h3>✨ Start Enrollment / Send Us a Message</h3>
+        <form id="contactForm" name="contact" method="POST" data-netlify="true">
           <div class="form-row">
             <div class="form-group">
               <label>Parent Name</label>
-              <input type="text" placeholder="Your name">
+              <input type="text" name="parent-name" placeholder="Your name" required>
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="email" placeholder="your@email.com">
+              <input type="email" name="email" placeholder="your@email.com" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>Child's Age</label>
-              <select>
-                <option>Select age...</option>
-                <option>3 years old</option>
-                <option>4 years old</option>
-                <option>5 years old</option>
+              <select name="child-age">
+                <option value="">Select age...</option>
+                <option value="3">3 years old</option>
+                <option value="4">4 years old</option>
+                <option value="5">5 years old</option>
               </select>
             </div>
             <div class="form-group">
               <label>Preferred Location</label>
-              <select>
-                <option>Select location...</option>
-                <option>Eagles Gate, Eagle Mountain</option>
-                <option>Silverlake, Eagle Mountain</option>
-                <option>Silverlake II, Eagle Mountain</option>
-                <option>Lone Tree, Eagle Mountain</option>
-                <option>Saratoga Springs</option>
+              <select name="location">
+                <option value="">Select location...</option>
+                <option value="Eagles Gate">Eagles Gate, Eagle Mountain</option>
+                <option value="Silverlake">Silverlake, Eagle Mountain</option>
+                <option value="Silverlake II">Silverlake II, Eagle Mountain</option>
+                <option value="Lone Tree">Lone Tree, Eagle Mountain</option>
+                <option value="Saratoga Springs">Saratoga Springs</option>
               </select>
             </div>
           </div>
           <div class="form-group">
             <label>Message</label>
-            <textarea placeholder="Tell us about your child or ask any questions..."></textarea>
+            <textarea name="message" placeholder="Tell us about your child or ask any questions..."></textarea>
           </div>
           <button type="submit" class="btn btn-primary magnetic-btn">Send Message <span class="btn-arrow">→</span></button>
         </form>
